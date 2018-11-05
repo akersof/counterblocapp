@@ -5,7 +5,6 @@ import 'package:counterbloc_app/providers/counter_provider.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
