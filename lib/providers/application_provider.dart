@@ -14,7 +14,7 @@ class ApplicationProvider extends StatefulWidget {
   ApplicationProvider({this.child});
 
   static ApplicationBloc of(BuildContext context, {bool redraw = true}) =>
-      _CounterProviderInherited.of(context, redraw: redraw);
+      _ApplicationProviderInherited.of(context, redraw: redraw);
 
   @override
   _ApplicationProviderState createState() => _ApplicationProviderState();
@@ -31,27 +31,27 @@ class _ApplicationProviderState extends State<ApplicationProvider> {
 
   @override
   Widget build(BuildContext context) {
-    return _CounterProviderInherited(bloc: _bloc, child: widget.child);
+    return _ApplicationProviderInherited(bloc: _bloc, child: widget.child);
   }
 }
 
-class _CounterProviderInherited extends InheritedWidget {
+class _ApplicationProviderInherited extends InheritedWidget {
   final ApplicationBloc bloc;
   final Widget child;
-  _CounterProviderInherited({this.bloc, this.child}) : super(child: child);
+  _ApplicationProviderInherited({this.bloc, this.child}) : super(child: child);
 
   static ApplicationBloc of(BuildContext context, {bool redraw = true}) => redraw
-      ? (context.inheritFromWidgetOfExactType(_CounterProviderInherited)
-  as _CounterProviderInherited)
+      ? (context.inheritFromWidgetOfExactType(_ApplicationProviderInherited)
+  as _ApplicationProviderInherited)
       .bloc
       : (context
       .ancestorInheritedElementForWidgetOfExactType(
-      _CounterProviderInherited)
-      .widget as _CounterProviderInherited)
+      _ApplicationProviderInherited)
+      .widget as _ApplicationProviderInherited)
       .bloc;
 
   @override
-  bool updateShouldNotify(_CounterProviderInherited oldWidget) {
+  bool updateShouldNotify(_ApplicationProviderInherited oldWidget) {
     return oldWidget.bloc != bloc;
   }
 }
