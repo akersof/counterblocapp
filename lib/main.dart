@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:counterbloc_app/providers/application_provider.dart';
 import 'package:counterbloc_app/providers/counter_provider.dart';
 
-
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -34,11 +32,10 @@ class _MyHomePageState extends State<MyHomePage> {
     final _counterBloc = CounterProvider.of(context);
     return Scaffold(
       appBar: AppBar(
-
-        title: StreamBuilder<String>(
-            stream: _appBloc.title,
-            initialData: _appBloc.title.value,
-            builder:(context, snapshot) => Text(snapshot.data),
+          title: StreamBuilder<String>(
+        stream: _appBloc.title,
+        initialData: _appBloc.title.value,
+        builder: (context, snapshot) => Text(snapshot.data),
       )),
       body: Center(
         child: Column(
@@ -50,10 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
             StreamBuilder<int>(
               stream: _counterBloc.itemCount,
               initialData: _counterBloc.itemCount.value,
-              builder:(context, snapshot) => Text(
-                '${snapshot.data}',
-                style: Theme.of(context).textTheme.display1,
-              ),
+              builder: (context, snapshot) => Text(
+                    '${snapshot.data}',
+                    style: Theme.of(context).textTheme.display1,
+                  ),
             ),
           ],
         ),
