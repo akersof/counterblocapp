@@ -5,7 +5,6 @@
 ///   1) dipose() all streams of our BLoC from the state of our StatefullWidget and
 ///   2) get an easy O(1) access to our BLoC from our widget tree.
 
-
 import 'package:flutter/material.dart';
 import 'package:counterbloc_app/blocs/application_bloc.dart';
 
@@ -40,15 +39,16 @@ class _ApplicationProviderInherited extends InheritedWidget {
   final Widget child;
   _ApplicationProviderInherited({this.bloc, this.child}) : super(child: child);
 
-  static ApplicationBloc of(BuildContext context, {bool redraw = true}) => redraw
-      ? (context.inheritFromWidgetOfExactType(_ApplicationProviderInherited)
-  as _ApplicationProviderInherited)
-      .bloc
-      : (context
-      .ancestorInheritedElementForWidgetOfExactType(
-      _ApplicationProviderInherited)
-      .widget as _ApplicationProviderInherited)
-      .bloc;
+  static ApplicationBloc of(BuildContext context, {bool redraw = true}) =>
+      redraw
+          ? (context.inheritFromWidgetOfExactType(_ApplicationProviderInherited)
+                  as _ApplicationProviderInherited)
+              .bloc
+          : (context
+                  .ancestorInheritedElementForWidgetOfExactType(
+                      _ApplicationProviderInherited)
+                  .widget as _ApplicationProviderInherited)
+              .bloc;
 
   @override
   bool updateShouldNotify(_ApplicationProviderInherited oldWidget) {
