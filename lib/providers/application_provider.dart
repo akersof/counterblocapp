@@ -22,6 +22,13 @@ class ApplicationProvider extends StatefulWidget {
 
 class _ApplicationProviderState extends State<ApplicationProvider> {
   final _bloc = ApplicationBloc();
+
+  @override
+  void dispose() {
+    _bloc.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return _CounterProviderInherited(bloc: _bloc, child: widget.child);
