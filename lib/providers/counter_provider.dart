@@ -10,7 +10,7 @@ import 'package:counterbloc_app/blocs/counter_bloc.dart';
 
 class CounterProvider extends StatefulWidget {
   final Widget child;
-  CounterProvider(this.child);
+  CounterProvider({this.child});
 
   static CounterBloc of(BuildContext context, {bool redraw = true}) =>
       _CounterProviderInherited.of(context, redraw: redraw);

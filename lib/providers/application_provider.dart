@@ -11,7 +11,7 @@ import 'package:counterbloc_app/blocs/application_bloc.dart';
 
 class ApplicationProvider extends StatefulWidget {
   final Widget child;
-  ApplicationProvider(this.child);
+  ApplicationProvider({this.child});
 
   static ApplicationBloc of(BuildContext context, {bool redraw = true}) =>
       _CounterProviderInherited.of(context, redraw: redraw);
