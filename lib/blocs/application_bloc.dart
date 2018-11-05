@@ -8,7 +8,7 @@ import 'package:counterbloc_app/models/application.dart';
 
 class ApplicationBloc {
   //state
-  final _app = Application(title: "Flutter demo app with BLoC pattern");
+  final _app = Application(title: "Demo app with BLoC");
 
   //output
   final _titleController = BehaviorSubject<String>();
