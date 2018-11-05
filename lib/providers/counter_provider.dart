@@ -21,6 +21,13 @@ class CounterProvider extends StatefulWidget {
 
 class _CounterProviderState extends State<CounterProvider> {
   final _bloc = CounterBloc();
+
+  @override
+  void dispose() {
+    _bloc.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return _CounterProviderInherited(bloc: _bloc, child: widget.child);
