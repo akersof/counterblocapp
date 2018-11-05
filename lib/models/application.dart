@@ -8,4 +8,3 @@ class Application {
   String title;
   Application({@required this.title}) : assert(title != null);
 }
-
